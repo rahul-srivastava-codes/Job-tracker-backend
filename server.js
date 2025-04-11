@@ -1,11 +1,13 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
+const jobRoutes = require("./routes/jobRoutes");
 require("dotenv").config(); // ✅ add this at top
 
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use("/", jobRoutes);
 
 // ✅ Connect to MongoDB Atlas
 mongoose
