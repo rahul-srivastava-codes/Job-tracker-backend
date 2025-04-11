@@ -16,6 +16,10 @@ mongoose
 // ✅ Routes
 app.use("/api/jobs", require("./routes/jobRoutes"));
 
+app.get("/", (req, res) => {
+  res.send("✅ Job Tracker API is running!");
+});
+
 // ✅ Port from environment
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
